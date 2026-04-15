@@ -85,6 +85,7 @@ fn main(){
         halt();
         sleep(Duration::from_secs(1));
     }
+    println!("You survived the {days} days, congratulations!")
 }
 
 
