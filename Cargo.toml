@@ -13,3 +13,4 @@ rand = "0.10.1"
 
 [profile.release]
 opt-level = "z"
+strip = true
