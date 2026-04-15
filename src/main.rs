@@ -109,7 +109,7 @@ fn game(bust:i32,money:&mut u8){
     let mut deck: Standard52Deck = Pile::deck().shuffled();
     let mut hand: Vec<Standard52Card> = Vec::new();
     let dealer_value: &i32 = [17,18,19,20].choose(&mut rand::rng()).unwrap();
-    let mut player_value: i32 = 0;
+    let mut player_value: i32;
     loop{
         clear();
         println!("Dealer has a hand of {dealer_value}");

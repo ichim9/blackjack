@@ -10,3 +10,6 @@ crossterm = "0.29.0"
 inquire = "0.9.4"
 owo-colors = "4.3.0"
 rand = "0.10.1"
+
+[profile.release]
+opt-level = "z"
