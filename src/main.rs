@@ -10,10 +10,15 @@ use rand::seq::IndexedRandom;
 
 #[derive(Parser)]
 struct Cli{
+    #[arg(short,long)]
     bust:Option<i32>,
-    starter_money:Option<u8>,
+    #[arg(short,long)]
+    starter_money:Option<u64>,
+    #[arg(short,long)]
     daily_games:Option<u8>,
+    #[arg(short,long)]
     profit:Option<f32>,
+    #[arg(short,long)]
     days:Option<u8>
 }
 
@@ -94,11 +99,11 @@ fn halt(){
     std::io::stdin().read_line(&mut void).ok();
 }
 
-fn game(bust:i32,money:&mut u8){
+fn game(bust:i32,money:&mut u64){
     clear();
-    let mut bet:u8 = 0;
+    let mut bet:u64 = 0;
     loop{
-        let prompt: u8 = CustomType::new(format!("Please select a bet, you have {}",*money).as_str()).prompt().unwrap();
+        let prompt: u64 = CustomType::new(format!("Please select a bet, you have {}",*money).as_str()).prompt().unwrap();
         if prompt <= *money{
             *&mut bet = prompt;
             break
